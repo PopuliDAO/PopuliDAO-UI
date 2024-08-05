@@ -9,6 +9,8 @@ import { Header } from "@/components/Header"
 import { ToastContainer } from "react-toastify"
 import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
+import { usePathname } from "next/navigation"
+import { InteractionHeader } from "@/components/InteractionHeader"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -20,6 +22,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const path = usePathname()
+
+  const interactionPaths = [
+  "/interaction",
+  "/interaction/dashboard",
+  "/interaction/finance",
+  "/interaction/governance",
+  "/interaction/members",
+  "/interaction/settings",
+  ];
 
   return (
     <html lang="en">
@@ -36,7 +48,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Providers>
-            <Header />
+            {!interactionPaths.includes(path) && <Header />}
+            {interactionPaths.includes(path) && <InteractionHeader/>}
             {children}
           </Providers>
           <ToastContainer />
