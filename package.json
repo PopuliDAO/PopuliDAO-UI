@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "2.1.0",
-  "description": "A basic Next.js setup for starting to build full stack Ethereum dApps",
+  "description": "PopuliDAO frontend",
   "main": "index.js",
   "author": "Mihir Sahu <0xmihirsahu@gmail.com>",
   "license": "UNLICENSED",
@@ -20,6 +20,7 @@
     "@radix-ui/react-navigation-menu": "^1.2.0",
     "@radix-ui/react-progress": "^1.1.0",
     "@radix-ui/react-select": "^2.1.1",
+    "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slider": "^1.2.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.0",
