@@ -1,8 +1,9 @@
+import FinancePage from '@/components/FinancePage'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>Finance</div>
+    <div><FinancePage/></div>
   )
 }
 

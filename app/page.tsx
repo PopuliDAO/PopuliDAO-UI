@@ -49,7 +49,7 @@ const Home = () => {
                     Join a DAO
                   </CardTitle>
                   <CardDescription className="flex justify-center">
-                    Deploy your new project in one-click.
+                    Deploy your new project in one-click
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex justify-center">
