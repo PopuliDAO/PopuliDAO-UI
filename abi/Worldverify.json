@@ -1,0 +1,69 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_worldId",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_externalNullifier",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidNullifier",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "WorldIDAlreadyUsed",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "WalletAddress",
+        "type": "address"
+      }
+    ],
+    "name": "DAOParticipantRegistered",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "signal",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "root",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "nullifierHash",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256[8]",
+        "name": "proof",
+        "type": "uint256[8]"
+      }
+    ],
+    "name": "registerAccount",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
