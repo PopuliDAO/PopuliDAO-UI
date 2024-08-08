@@ -16,9 +16,18 @@ import { useAccount, useWriteContract } from "wagmi"
 import { IDKitWidget, ISuccessResult } from "@worldcoin/idkit"
 import { decodeAbiParameters, toHex } from "viem"
 import WorldverifyAbi from "../abi/Worldverify.json" // Adjust the path as necessary
+import { useConnectModal } from "@rainbow-me/rainbowkit"
 
 const GovernancePage = () => {
+  const { openConnectModal } = useConnectModal()
   const { address: connectedAddress } = useAccount() // Get type address from useAccount and assigning it to const connectedAddress
+
+  const onWalletConnect = () => {
+    if (connectedAddress) {
+      return
+    }
+    openConnectModal?.()
+  }
 
   const onSuccess = async (result: ISuccessResult) => {
     const {
@@ -58,6 +67,14 @@ const GovernancePage = () => {
 
   return (
     <div className="flex flex-col items-center mt-4">
+      {!connectedAddress && (
+        <button
+          onClick={onWalletConnect}
+          className="btn btn-outline bg-blue-600 w-20 h-20 hover:bg-blue-300 transition-all"
+        >
+          <span>Connect Wallet</span>
+        </button>
+      )}
       <Card className="sm:col-span-2 p-4 min-w-7/12 w-9/12">
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="text-3xl">Proposals</CardTitle>
