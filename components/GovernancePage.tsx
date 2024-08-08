@@ -17,6 +17,7 @@ import { IDKitWidget, ISuccessResult } from "@worldcoin/idkit"
 import { decodeAbiParameters, toHex } from "viem"
 import WorldverifyAbi from "../abi/Worldverify.json" // Adjust the path as necessary
 import { useConnectModal } from "@rainbow-me/rainbowkit"
+import { worldIdApp, worldAction } from "@/app/constants"
 
 const GovernancePage = () => {
   const { openConnectModal } = useConnectModal()
@@ -79,8 +80,8 @@ const GovernancePage = () => {
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="text-3xl">Proposals</CardTitle>
           <IDKitWidget
-            app_id="app_GBkZ1KlVUdFTjeMXKlVUdFT" // must be an app set to on-chain in Developer Portal
-            action="claim_nft"
+            app_id={worldIdApp} // must be an app set to on-chain in Developer Portal
+            action={worldAction}
             signal={connectedAddress} // proof will only verify if the signal is unchanged, this prevents tampering
             onSuccess={onSuccess} // use onSuccess to call your smart contract
             // no use for handleVerify, so it is removed
