@@ -15,23 +15,20 @@ import {
 import { useAccount, useWriteContract } from "wagmi"
 import { IDKitWidget, ISuccessResult } from "@worldcoin/idkit"
 import { decodeAbiParameters, toHex } from "viem"
-import WorldverifyAbi from "../abi/Worldverify.json" // Adjust the path as necessary
-import { useConnectModal } from "@rainbow-me/rainbowkit"
+import WorldverifyAbi from "../abi/Worldverify.json"
 import { worldIdApp, worldAction } from "@/app/constants"
 
-const GovernancePage = () => {
-  const { openConnectModal } = useConnectModal()
-  const { address: connectedAddress } = useAccount() // Get type address from useAccount and assigning it to const connectedAddress
+const GovernancePage: React.FC = () => {
+  const { address: connectedAddress } = useAccount()
 
+  const {
+    data: hash,
+    isPending,
+    error,
+    writeContractAsync,
+  } = useWriteContract()
 
   const onSuccess = async (result: ISuccessResult) => {
-    const {
-      data: hash,
-      isPending,
-      error,
-      writeContractAsync,
-    } = useWriteContract()
-
     const unpackedProof = decodeAbiParameters(
       [{ type: "uint256[8]" }],
       result.proof as `0x${string}`
@@ -41,22 +38,22 @@ const GovernancePage = () => {
 
     try {
       await writeContractAsync({
-        address: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as `0x${string}`, // Replace with your contract address
+        address: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as `0x${string}`,
         account: connectedAddress!,
-        abi: WorldverifyAbi, // Replace with your contract ABI
+        abi: WorldverifyAbi,
         functionName: "registerAccount",
         args: [
           connectedAddress!,
-          BigInt(result!.merkle_root),
-          BigInt(result!.nullifier_hash),
+          BigInt(result.merkle_root),
+          BigInt(result.nullifier_hash),
           unpackedProof,
           toHex(
             "0xbafkreibpppzeta6odb3k25ctwwqqq3zxqa4v67k3lc7ryh7dw2vcjot63u"
           ),
         ],
       })
-    } catch (error) {
-      console.error("Error", error)
+    } catch (err) {
+      console.error("Error", err)
     }
   }
 
@@ -71,14 +68,16 @@ const GovernancePage = () => {
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="text-3xl">Proposals</CardTitle>
           <IDKitWidget
-            app_id={worldIdApp} // must be an app set to on-chain in Developer Portal
+            app_id={worldIdApp}
             action={worldAction}
-            signal={connectedAddress} // proof will only verify if the signal is unchanged, this prevents tampering
-            onSuccess={onSuccess} // use onSuccess to call your smart contract
-            // no use for handleVerify, so it is removed
-            // use default verification_level (orb-only), as device credentials are not supported on-chain
+            signal={connectedAddress}
+            onSuccess={onSuccess}
           >
-            {({ open }) => <Button className="rounded-xl" onClick={open}>{"+ New Proposal"}</Button>}
+            {({ open }) => (
+              <Button className="rounded-xl" onClick={open}>
+                + New Proposal
+              </Button>
+            )}
           </IDKitWidget>
         </CardHeader>
       </Card>
