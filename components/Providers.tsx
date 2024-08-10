@@ -12,7 +12,7 @@ import { hardhat, sepolia, baseSepolia } from "wagmi/chains"
 const queryClient = new QueryClient()
 
 const config = getDefaultConfig({
-  appName: "DAO-Fi",
+  appName: "PopuliDAO",
   projectId: process.env.NEXT_PUBLIC_RAINBOWKIT_PROJECT_ID ?? "",
   chains: [hardhat, sepolia, baseSepolia],
   ssr: true,

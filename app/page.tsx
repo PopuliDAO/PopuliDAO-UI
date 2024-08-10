@@ -33,7 +33,7 @@ const Home = () => {
               <Card className="w-[800px] rounded-xl mt-0">
                 <CardHeader>
                   <CardTitle className="flex justify-center text-4xl">
-                    We see you are not yet Part of any DAO yet!
+                    We see you are not a part of any DAO yet!
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-col items-center justify-center">
@@ -53,7 +53,7 @@ const Home = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex justify-center">
-                  <Button className="flex gap-2 group">
+                  <Button className="flex gap-2 group rounded-xl">
                     Join a DAO
                     <ArrowRight className="transition-transform duration-200 group-hover:translate-x-2" />
                   </Button>
@@ -70,7 +70,7 @@ const Home = () => {
                 </CardHeader>
                 <CardContent className="flex justify-center">
                   <Link href="/daoconfiguration">
-                    <Button className="flex gap-2 group">
+                    <Button className="flex gap-2 group rounded-xl">
                       Configure DAO
                       <ArrowRight className="transition-transform duration-200 group-hover:translate-x-2" />
                     </Button>

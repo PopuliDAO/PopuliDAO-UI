@@ -4,18 +4,18 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 
-const cardClassNames = "w-full p-2 flex flex-col items-center justify-center rounded-xl"
+const cardClassNames = "w-full p-2 rounded-xl flex flex-col items-center justify-center rounded-xl"
 const cardItemClassNames = "flex flex-row p-3 items-center justify-start gap-40 w-full"
 
 const SettingsPage = () => {
   return (
     <div className="flex flex-col items-center mt-3">
-      <Card className="sm:col-span-2 bg-slate-50 border-none p-4 min-w-8/12 w-9/12">
+      <Card className="sm:col-span-2 rounded-xl bg-slate-50 border-none p-4 min-w-8/12 w-9/12">
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="text-3xl">
             {"DAO Settings"}
           </CardTitle>
-          <Button>{"Edit Settings"}</Button>
+          <Button className="rounded-xl">{"Edit Settings"}</Button>
         </CardHeader>
       </Card>
 

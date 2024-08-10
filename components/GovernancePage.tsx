@@ -23,12 +23,6 @@ const GovernancePage = () => {
   const { openConnectModal } = useConnectModal()
   const { address: connectedAddress } = useAccount() // Get type address from useAccount and assigning it to const connectedAddress
 
-  const onWalletConnect = () => {
-    if (connectedAddress) {
-      return
-    }
-    openConnectModal?.()
-  }
 
   const onSuccess = async (result: ISuccessResult) => {
     const {
@@ -69,14 +63,11 @@ const GovernancePage = () => {
   return (
     <div className="flex flex-col items-center mt-4">
       {!connectedAddress && (
-        <button
-          onClick={onWalletConnect}
-          className="btn btn-outline bg-blue-600 w-20 h-20 hover:bg-blue-300 transition-all"
-        >
-          <span>Connect Wallet</span>
-        </button>
+        <div className="text-lg text-red-500 font-semibold">
+          You have not connected your wallet
+        </div>
       )}
-      <Card className="sm:col-span-2 p-4 min-w-7/12 w-9/12">
+      <Card className="sm:col-span-2 rounded-xl p-4 min-w-7/12 w-9/12">
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="text-3xl">Proposals</CardTitle>
           <IDKitWidget
@@ -87,7 +78,7 @@ const GovernancePage = () => {
             // no use for handleVerify, so it is removed
             // use default verification_level (orb-only), as device credentials are not supported on-chain
           >
-            {({ open }) => <Button onClick={open}>{"+ New Proposal"}</Button>}
+            {({ open }) => <Button className="rounded-xl" onClick={open}>{"+ New Proposal"}</Button>}
           </IDKitWidget>
         </CardHeader>
       </Card>
@@ -105,16 +96,16 @@ const GovernancePage = () => {
           </div>
           <TabsContent value="all">
             <div className="flex flex-col gap-4">
-              <Card className="">
-                <CardHeader className="flex flex-row items-center justify-between">
-                  <p className="text-3xl font-semibold">Donation</p>
-                  <Badge className="text-lg" variant="outline">
+              <Card className="rounded-b-xl">
+                <CardHeader className="flex flex-row items-center text-3xl font-semibold justify-between">
+                  Donation
+                  <Badge className="text-lg font-normal" variant="outline">
                     Active
                   </Badge>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription>
-                    <p className="text-lg">Donation to the community</p>
+                  <CardDescription className="text-lg">
+                    Donation to the community
                   </CardDescription>
                 </CardContent>
                 <CardFooter className="text-sm">

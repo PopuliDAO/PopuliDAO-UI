@@ -13,12 +13,12 @@ import { Badge } from "@/components/ui/badge"
 const FinancePage = () => {
   return (
     <div className="flex flex-col items-center mt-3">
-      <Card className="sm:col-span-2 bg-slate-50 border-none p-4 min-w-8/12 w-9/12">
+      <Card className="sm:col-span-2 rounded-xl bg-slate-50 border-none p-4 min-w-8/12 w-9/12">
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="text-3xl">
             {"Total $ value of all tokens"}
           </CardTitle>
-          <Button>{"+ New Transfer"}</Button>
+          <Button className="rounded-xl">{"+ New Transfer"}</Button>
         </CardHeader>
         <CardFooter className="text-base">
           <Badge className="" variant="outline">

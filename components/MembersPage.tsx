@@ -6,12 +6,12 @@ import { Badge } from "@/components/ui/badge"
 const MembersPage = () => {
 	return (
 		<div className="flex flex-col items-center mt-3">
-			<Card className="sm:col-span-2 bg-slate-50 border-none p-4 min-w-8/12 w-9/12">
+			<Card className="sm:col-span-2 rounded-xl bg-slate-50 border-none p-4 min-w-8/12 w-9/12">
 				<CardHeader className="flex flex-row items-center justify-between">
 					<CardTitle className="text-3xl">
 						{"X Members"}
 					</CardTitle>
-					<Button>{"Manage Members"}</Button>
+					<Button className='rounded-xl'>{"Manage Members"}</Button>
 				</CardHeader>
 				<CardFooter className="text-base">
 					<div>{"Wallet-Based"}</div>

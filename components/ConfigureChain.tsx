@@ -86,7 +86,7 @@ export default function ConfigureChain({
             </Button>
             <Button
               variant={"outline"}
-              className={choice ? "border-blue-500" : ""}
+              className={choice ? "border-blue-500 rounded-xl" : "rounded-xl"}
               onClick={() => setChoice(true)}
             >
               Testnet
@@ -106,10 +106,10 @@ export default function ConfigureChain({
             </div>
           )}
           <div className="flex justify-between mt-20 w-[800px]">
-            <Button onClick={() => router.push("/")}>
+            <Button className="rounded-xl" onClick={() => router.push("/")}>
               <ArrowLeft /> Back
             </Button>
-            <Button onClick={() => setConfigurationPage(50)}>
+            <Button className="rounded-xl" onClick={() => setConfigurationPage(50)}>
               Next <ArrowRight />
             </Button>
           </div>
@@ -186,10 +186,10 @@ export default function ConfigureChain({
             </form>
           </Form>
           <div className="flex justify-between mt-20 w-[800px]">
-            <Button onClick={() => setConfigurationPage((prev) => prev - 25)}>
+            <Button className="rounded-xl" onClick={() => setConfigurationPage((prev) => prev - 25)}>
               <ArrowLeft /> Back
             </Button>
-            <Button onClick={() => setConfigurationPage(75)}>
+            <Button className="rounded-xl" onClick={() => setConfigurationPage(75)}>
               Next <ArrowRight />
             </Button>
           </div>
@@ -258,10 +258,10 @@ export default function ConfigureChain({
             </form>
           </Form>
           <div className="flex justify-between mt-20 w-[800px]">
-            <Button onClick={() => setConfigurationPage((prev) => prev - 25)}>
+            <Button className="rounded-xl" onClick={() => setConfigurationPage((prev) => prev - 25)}>
               <ArrowLeft /> Back
             </Button>
-            <Button onClick={() => setConfigurationPage(100)}>
+            <Button className="rounded-xl" onClick={() => setConfigurationPage(100)}>
               Next <ArrowRight />
             </Button>
           </div>
@@ -363,10 +363,10 @@ export default function ConfigureChain({
             </form>
           </Form>
           <div className="flex justify-between mt-20 w-[800px]">
-            <Button onClick={() => setConfigurationPage((prev) => prev - 25)}>
+            <Button className="rounded-xl" onClick={() => setConfigurationPage((prev) => prev - 25)}>
               <ArrowLeft /> Back
             </Button>
-            <Button onClick={() => router.push("/interaction")}>
+            <Button className="rounded-xl" onClick={() => router.push("/interaction")}>
               Next <ArrowRight />
             </Button>
           </div>
