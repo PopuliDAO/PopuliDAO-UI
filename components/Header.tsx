@@ -13,7 +13,7 @@ const Header = () => {
         <Link href="/" className="text-lg md:text-xl font-bold text-cyan-500">
           DAO-Fi
         </Link>
-        <Link href="/dao-config" className={` ${pathname === "/dao-config" ? "text-cyan-600 font-bold" : "text-gray-700 font-semibold"}`}>Config</Link>
+        <Link href="/daoconfiguration" className={` ${pathname === "/dao-config" ? "text-cyan-600 font-bold" : "text-gray-700 font-semibold"}`}>Config</Link>
         <Link href="/interaction" className={` ${pathname === "/interaction" ? "text-cyan-600 font-bold" : "text-gray-700 font-semibold"}`}>Interact</Link>
       </div>
       <div>
