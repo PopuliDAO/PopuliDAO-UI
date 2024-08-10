@@ -19,7 +19,7 @@ export default function Daoconfiguration() {
     <div>
       <div className="flex justify-center">
         {" "}
-        <Card className="w-[800px] mt-10 rounded-xl">
+        <Card className="w-[800px] mt-16 rounded-xl">
           <CardHeader>
             {configurationPage === 25 && (
               <>
