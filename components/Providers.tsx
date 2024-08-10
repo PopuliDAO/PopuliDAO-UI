@@ -6,7 +6,6 @@ import { WagmiProvider } from "wagmi"
 import {
   getDefaultConfig,
   RainbowKitProvider,
-  midnightTheme,
 } from "@rainbow-me/rainbowkit"
 import { hardhat, sepolia, baseSepolia } from "wagmi/chains"
 
@@ -22,7 +21,7 @@ const config = getDefaultConfig({
 const Providers = ({ children }: { children: ReactNode }) => (
   <WagmiProvider config={config}>
     <QueryClientProvider client={queryClient}>
-      <RainbowKitProvider theme={midnightTheme()}>{children}</RainbowKitProvider>
+      <RainbowKitProvider >{children}</RainbowKitProvider>
     </QueryClientProvider>
   </WagmiProvider>
 )

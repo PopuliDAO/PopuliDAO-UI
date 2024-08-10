@@ -4,6 +4,7 @@ import "./globals.css"
 import "@rainbow-me/rainbowkit/styles.css"
 import "react-toastify/dist/ReactToastify.css"
 import { Inter as FontSans } from "next/font/google"
+import { Ysabeau_Office } from "next/font/google"
 import { Providers } from "@/components/Providers"
 import { Header } from "@/components/Header"
 import { ToastContainer } from "react-toastify"
@@ -15,6 +16,10 @@ import { InteractionHeader } from "@/components/InteractionHeader"
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
+})
+
+const ysabeauOffice = Ysabeau_Office({
+  subsets: ["latin"],
 })
 
 export default function RootLayout({
@@ -38,11 +43,10 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          ysabeauOffice.className
         )}
       >
         <ThemeProvider
-          attribute="class"
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange

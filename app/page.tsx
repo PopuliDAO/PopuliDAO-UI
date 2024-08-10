@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
+import { AuroraBackground } from "@/components/aurora-background"
 
 const Home = () => {
   const [partOfDAO, setPartOfDAO] = useState<boolean>(false)
@@ -21,7 +22,7 @@ const Home = () => {
   const pathname = usePathname()
 
   return (
-    <main>
+    <AuroraBackground>
       <Wrapper>
         {partOfDAO ? (
           <div>DAO Project</div>
@@ -29,21 +30,20 @@ const Home = () => {
           <>
             <div className="flex justify-center">
               {" "}
-              <Card className="w-[800px] mt-10">
+              <Card className="w-[800px] rounded-xl mt-0">
                 <CardHeader>
-                  <CardTitle className="flex justify-center">
+                  <CardTitle className="flex justify-center text-4xl">
                     We see you are not yet Part of any DAO yet!
                   </CardTitle>
-                  <CardDescription className="flex justify-center">
-                    Deploy your new DAO with minimal technical know-how or join
-                    one!
-                  </CardDescription>
                 </CardHeader>
-                <CardContent></CardContent>
+                <CardContent className="flex flex-col items-center justify-center">
+                  Deploy your new DAO with minimal technical know-how or join
+                    one!
+                </CardContent>
               </Card>
             </div>
             <div className="flex justify-center mt-32 gap-20">
-              <Card className="w-[350px]">
+              <Card className="w-[350px] rounded-xl">
                 <CardHeader>
                   <CardTitle className="flex justify-center">
                     Join a DAO
@@ -59,7 +59,7 @@ const Home = () => {
                   </Button>
                 </CardContent>
               </Card>
-              <Card className="w-[350px]">
+              <Card className="w-[350px] rounded-xl">
                 <CardHeader>
                   <CardTitle className="flex justify-center">
                     Create your own DAO
@@ -81,7 +81,7 @@ const Home = () => {
           </>
         )}
       </Wrapper>
-    </main>
+    </AuroraBackground>
   )
 }
 
