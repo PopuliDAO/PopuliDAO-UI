@@ -30,20 +30,24 @@ const Home = () => {
           <>
             <div className="flex justify-center">
               {" "}
-              <Card className="w-[800px] rounded-xl mt-0">
+              <Card className="w-[800px] rounded-xl mt-0 bg-transparent border-none">
                 <CardHeader>
-                  <CardTitle className="flex justify-center text-4xl">
-                    We see you are not a part of any DAO yet!
+                  <CardTitle className="flex justify-center text-5xl">
+                    PopuliDAO
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-col items-center justify-center">
-                  Deploy your new DAO with minimal technical know-how or join
-                    one!
+                  The DAO platform for the people, by the people.
                 </CardContent>
               </Card>
             </div>
-            <div className="flex justify-center mt-32 gap-20">
-              <Card className="w-[350px] rounded-xl">
+            <div className="flex flex-col justify-center mt-32">
+              <div className="flex flex-col items-center justify-center">
+                  Deploy your new DAO with minimal technical know-how or join
+                    one!
+                </div>
+                <div className="flex mt-3 justify-center gap-20">
+                  <Card className="w-[350px] bg-transparent rounded-xl">
                 <CardHeader>
                   <CardTitle className="flex justify-center">
                     Join a DAO
@@ -59,7 +63,7 @@ const Home = () => {
                   </Button>
                 </CardContent>
               </Card>
-              <Card className="w-[350px] rounded-xl">
+              <Card className="w-[350px] bg-transparent rounded-xl">
                 <CardHeader>
                   <CardTitle className="flex justify-center">
                     Create your own DAO
@@ -77,6 +81,8 @@ const Home = () => {
                   </Link>
                 </CardContent>
               </Card>
+                </div>
+              
             </div>
           </>
         )}

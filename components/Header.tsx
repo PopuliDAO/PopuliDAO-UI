@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header className="py-4 px-24 border-b mb-0 flex items-center justify-between">
       <div className="flex justify-center items-center gap-6">
-        <Link href="/" className="text-lg md:text-xl font-bold text-blue-500">
+        <Link href="/" className="text-2xl md:text-xl font-bold text-blue-500">
           PopuliDAO
         </Link>
         <Link href="/daoconfiguration" className={` ${pathname === "/dao-config" ? "text-blue-600 font-bold" : "text-gray-700 font-semibold"}`}>Config</Link>

@@ -77,7 +77,7 @@ export default function ConfigureChain({
 
   console.log("configuration is at:", configurationPage)
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center rounded-xl ">
       {configurationPage === 25 && (
         <>
           <div className="flex flex-row justify-center gap-10 mt-20">
@@ -106,19 +106,19 @@ export default function ConfigureChain({
             </div>
           )}
           <div className="flex justify-between mt-20 w-[800px]">
-            <Button className="rounded-xl" onClick={() => router.push("/")}>
-              <ArrowLeft /> Back
+            <Button className="rounded-xl group" onClick={() => router.push("/")}>
+              <ArrowLeft className="transition-transform duration-200 group-hover:-translate-x-1" size={"16px"} /> Back
             </Button>
-            <Button className="rounded-xl" onClick={() => setConfigurationPage(50)}>
-              Next <ArrowRight />
+            <Button className="rounded-xl group" onClick={() => setConfigurationPage(50)}>
+              Next <ArrowRight className="transition-transform duration-200 group-hover:translate-x-1" size={"16px"} />
             </Button>
           </div>
         </>
       )}
       {configurationPage === 50 && (
         <>
-          <Form {...form}>
-            <form className="w-5/12 space-y-6 mt-10">
+          <Form  {...form}>
+            <form className="w-5/12 space-y-2 mt-10">
               <FormField
                 control={form.control}
                 name="name"
@@ -134,7 +134,7 @@ export default function ConfigureChain({
                         }}
                       />
                     </FormControl>
-                    <FormDescription>{field.value.length}/128</FormDescription>
+                    <FormDescription>{field.value.length}/32</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -159,8 +159,8 @@ export default function ConfigureChain({
                   </FormItem>
                 )}
               />
-              <div className="grid w-20 h-20 items-center gap-1.5">
-                <Input placeholder="59432" type="file" />
+              <div className="grid w-56 h-20 text-black items-center gap-1.5">
+                <Input placeholder="upload an image" type="file" />
               </div>
               <FormField
                 control={form.control}
@@ -186,11 +186,11 @@ export default function ConfigureChain({
             </form>
           </Form>
           <div className="flex justify-between mt-20 w-[800px]">
-            <Button className="rounded-xl" onClick={() => setConfigurationPage((prev) => prev - 25)}>
-              <ArrowLeft /> Back
+            <Button className="rounded-xl group" onClick={() => setConfigurationPage((prev) => prev - 25)}>
+              <ArrowLeft className="transition-transform duration-200 group-hover:-translate-x-1" size={"16px"} /> Back
             </Button>
-            <Button className="rounded-xl" onClick={() => setConfigurationPage(75)}>
-              Next <ArrowRight />
+            <Button className="rounded-xl group" onClick={() => setConfigurationPage(75)}>
+              Next <ArrowRight className="transition-transform duration-200 group-hover:translate-x-1" size={"16px"} />
             </Button>
           </div>
         </>
@@ -258,11 +258,11 @@ export default function ConfigureChain({
             </form>
           </Form>
           <div className="flex justify-between mt-20 w-[800px]">
-            <Button className="rounded-xl" onClick={() => setConfigurationPage((prev) => prev - 25)}>
-              <ArrowLeft /> Back
+            <Button className="rounded-xl group" onClick={() => setConfigurationPage((prev) => prev - 25)}>
+              <ArrowLeft className="transition-transform duration-200 group-hover:-translate-x-1" size={"16px"} /> Back
             </Button>
-            <Button className="rounded-xl" onClick={() => setConfigurationPage(100)}>
-              Next <ArrowRight />
+            <Button className="rounded-xl group" onClick={() => setConfigurationPage(100)}>
+              Next <ArrowRight className="transition-transform duration-200 group-hover:translate-x-1" size={"16px"} />
             </Button>
           </div>
         </>
@@ -363,11 +363,11 @@ export default function ConfigureChain({
             </form>
           </Form>
           <div className="flex justify-between mt-20 w-[800px]">
-            <Button className="rounded-xl" onClick={() => setConfigurationPage((prev) => prev - 25)}>
-              <ArrowLeft /> Back
+            <Button className="rounded-xl group" onClick={() => setConfigurationPage((prev) => prev - 25)}>
+              <ArrowLeft className="transition-transform duration-200 group-hover:-translate-x-1" size={"16px"} /> Back
             </Button>
-            <Button className="rounded-xl" onClick={() => router.push("/interaction")}>
-              Next <ArrowRight />
+            <Button className="rounded-xl group" onClick={() => router.push("/interaction")}>
+              Next <ArrowRight className="transition-transform duration-200 group-hover:translate-x-1" size={"16px"} />
             </Button>
           </div>
         </>

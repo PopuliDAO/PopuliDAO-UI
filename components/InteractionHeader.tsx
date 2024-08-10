@@ -10,14 +10,14 @@ const InteractionHeader = () => {
     return (
         <header className="py-4 px-24 border-b mb-0 flex items-center justify-between">
             <div className="flex justify-center items-center gap-6">
-                <Link href="/" className="text-lg md:text-xl font-bold text-blue-500">
+                <Link href="/" className="text-xl md:text-xl font-bold text-blue-500">
                     PopuliDAO
                 </Link>
-                <Link href="/interaction/dashboard" className={` ${pathname === "/interaction/dashboard" ? "text-blue-600 font-bold" : "text-gray-700 font-semibold"}`}>Dashboard</Link>
-                <Link href="/interaction/governance" className={` ${pathname === "/interaction/governance" ? "text-blue-600 font-bold" : "text-gray-700 font-semibold"}`}>Governance</Link>
-                <Link href="/interaction/finance" className={` ${pathname === "/interaction/finance" ? "text-blue-600 font-bold" : "text-gray-700 font-semibold"}`}>Finance</Link>
-                <Link href="/interaction/members" className={` ${pathname === "/interaction/members" ? "text-blue-600 font-bold" : "text-gray-700 font-semibold"}`}>Members</Link>
-                <Link href="/interaction/settings" className={` ${pathname === "/interaction/settings" ? "text-blue-600 font-bold" : "text-gray-700 font-semibold"}`}>Settings</Link>
+                <Link href="/interaction/dashboard" className={` rounded-xl hover:bg-gray-50  p-2 ${pathname === "/interaction/dashboard" ? "text-blue-600 font-bold bg-gray-50 " : "text-gray-700 font-semibold hover:text-blue-500"}`}>Dashboard</Link>
+                <Link href="/interaction/governance" className={`rounded-xl hover:bg-gray-50  p-2 ${pathname === "/interaction/governance" ? "text-blue-600 font-bold bg-gray-50 " : "text-gray-700 font-semibold hover:text-blue-500"}`}>Governance</Link>
+                <Link href="/interaction/finance" className={`rounded-xl hover:bg-gray-50 p-2 ${pathname === "/interaction/finance" ? "text-blue-600 font-bold bg-gray-50 " : "text-gray-700 font-semibold hover:text-blue-500"}`}>Finance</Link>
+                <Link href="/interaction/members" className={`rounded-xl hover:bg-gray-50 p-2 ${pathname === "/interaction/members" ? "text-blue-600 font-bold bg-gray-50 " : "text-gray-700 font-semibold hover:text-blue-500"}`}>Members</Link>
+                <Link href="/interaction/settings" className={`rounded-xl hover:bg-gray-50 p-2 ${pathname === "/interaction/settings" ? "text-blue-600 font-bold bg-gray-50 " : "text-gray-700 font-semibold hover:text-blue-500"}`}>Settings</Link>
             </div>
             <div>
                 <ConnectButton
