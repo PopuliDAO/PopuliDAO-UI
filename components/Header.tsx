@@ -8,7 +8,7 @@ const Header = () => {
   const pathname = usePathname();
 
   return (
-    <header className="py-4 px-24 border-b mb-0 flex items-center justify-between">
+    <header className="py-4 w-full px-24 mb-0 flex items-center justify-between z-10 fixed top-0 bg-gradient-to-b from-white via-white to-transparent">
       <div className="flex justify-center items-center gap-6">
         <Link href="/" className="text-2xl md:text-xl font-bold text-blue-500">
           PopuliDAO
