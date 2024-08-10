@@ -8,7 +8,8 @@ export default function Page() {
   const route  = useRouter()
   route.push("/interaction/dashboard")
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center text-lg font-bold">
+      Redirecting
     </div>
   )
 }
