@@ -29,6 +29,7 @@ const GovernancePage: React.FC = () => {
   const [proposalTarget, setProposalTarget] = React.useState("");
   const [proposalCalldata, setProposalCalldata] = React.useState("");
   const [showCreateProposal, setShowCreateProposal] = React.useState(false);
+  const [proposalCreated, setProposalCreated] = React.useState(false);
 
   const { createProposal, createProposalLoading, createProposalError } = useMyGovernorDao();
 
@@ -69,11 +70,19 @@ const GovernancePage: React.FC = () => {
 
   const handleCreateProposal = (event: React.FormEvent) => {
     event.preventDefault();
-    if (verified) {
+    try{
+      if (verified) {
       createProposal({ name: proposalName, description: proposalDescription });
+
     } else {
       console.log("You need to verify with World ID first.");
     }
+    } catch(err) {
+      console.error("Error", err);
+    } finally{
+      setProposalCreated(true);
+    }
+    
   };
 
   return (
@@ -168,6 +177,24 @@ const GovernancePage: React.FC = () => {
           </div>
           <TabsContent value="all">
             <div className="flex flex-col gap-4">
+              {proposalCreated && (
+                <Card className="rounded-b-xl">
+                <CardHeader className="flex flex-row items-center text-3xl font-semibold justify-between">
+                  Airdrop to all members
+                  <Badge className="text-lg font-normal" variant="outline">
+                    Active
+                  </Badge>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-lg">
+                    Airdrop 20 $PPL to all members of the DAO
+                  </CardDescription>
+                </CardContent>
+                <CardFooter className="text-sm">
+                  Published by 0x6922a...5678
+                </CardFooter>
+              </Card>
+              )}
               <Card className="rounded-b-xl">
                 <CardHeader className="flex flex-row items-center text-3xl font-semibold justify-between">
                   Staking
@@ -184,6 +211,7 @@ const GovernancePage: React.FC = () => {
                   Published by 0x1234...5678
                 </CardFooter>
               </Card>
+              
             </div>
           </TabsContent>
         </Tabs>
