@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Button } from "./ui/button"
 import Image from "next/image"
 import baselogo from "@/public/Images/baselogo.png"
+import opLogo from "@/public/Images/op-logo.png"
 import { Checkbox } from "./ui/checkbox"
 import { Label } from "@/components/ui/label"
 import { Input } from "./ui/input"
@@ -97,9 +98,9 @@ export default function ConfigureChain({
               className={`flex justify-center w-[800px] p-4 mt-10 cursor-pointer transition-all ${testNetChoice ? "bg-slate-100" : "hover:bg-slate-100"}`}
               onClick={() => setTestNetChoice(true)}
             >
-              <Image src={baselogo} alt="Base Logo" width={40} height={30} />{" "}
+              <Image src={opLogo} alt="OP Logo" width={40} height={30} />{" "}
               <div className="flex-1 ml-10">
-                <h4 className="text-sm">Base Sepolia Testnet</h4>
+                <h4 className="text-sm">Optimism Sepolia Testnet</h4>
                 <p className="text-xs">L2 Blockchain</p>
               </div>
               <Checkbox className="mt-2" checked={testNetChoice && true} />
@@ -139,29 +140,6 @@ export default function ConfigureChain({
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="ens"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>ENS Subdomain</FormLabel>
-                    <FormControl>
-                      <Input
-                        placeholder="59432"
-                        {...field}
-                        onChange={(event) => {
-                          field.onChange(event) // update character count
-                        }}
-                      />
-                    </FormControl>
-                    <FormDescription>{field.value.length}/128</FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <div className="grid w-56 h-20 text-black items-center gap-1.5">
-                <Input placeholder="upload an image" type="file" />
-              </div>
               <FormField
                 control={form.control}
                 name="description"
@@ -366,7 +344,7 @@ export default function ConfigureChain({
             <Button className="rounded-xl group" onClick={() => setConfigurationPage((prev) => prev - 25)}>
               <ArrowLeft className="transition-transform duration-200 group-hover:-translate-x-1" size={"16px"} /> Back
             </Button>
-            <Button className="rounded-xl group" onClick={() => router.push("/interaction")}>
+            <Button className="rounded-xl group" onClick={() => router.push("/interaction/governance")}>
               Next <ArrowRight className="transition-transform duration-200 group-hover:translate-x-1" size={"16px"} />
             </Button>
           </div>
