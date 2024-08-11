@@ -17,7 +17,7 @@ const FinancePage = () => {
       <Card className="sm:col-span-2 rounded-xl bg-slate-50 border-none p-4 min-w-8/12 w-9/12">
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="text-3xl">
-            {"Total $ value of all tokens"}
+            {"$5423"}
           </CardTitle>
           <Button className="rounded-xl">{"+ New Transfer"}</Button>
         </CardHeader>
@@ -25,7 +25,7 @@ const FinancePage = () => {
           <Badge className="" variant="outline">
             {"24h"}
           </Badge>
-          <div>{"Total $ value change in 24h"}</div>
+          <div>{"+231"}</div>
         </CardFooter>
       </Card>
 
@@ -36,25 +36,25 @@ const FinancePage = () => {
         <Card className="w-full rounded-xl">
           <CardHeader className="flex flex-row items-center justify-between">
             <div className="flex flex-row gap-1">
-              <div className="text-lg font-semibold">{"Token Name"}</div>
+              <div className="text-lg font-semibold">{"Populi"}</div>
               <Badge className="bg-slate-200" variant="outline">
-                {"Percentage Allocation"}
+                {"100%"}
               </Badge>
             </div>
             <div>
-              <div>{"Total $ value"}</div>
+              <div>{"$5423"}</div>
             </div>
           </CardHeader>
           <CardFooter className="text-sm flex flex-row items-center pb-5 justify-between">
             <div className="text-slate-700">
               <div>
-                {"Amount of token " + "$Ticker" + " . " + "Price of token"}
+                {"54230 " + "$PPL" + " . " + "$0.10"}
               </div>
             </div>
             <div className="flex flex-row gap-1">
-              <div>{"$ value change in 24h"}</div>
+              <div>{"$0.01"}</div>
               <Badge className="bg-green-200" variant="outline">
-                {"Percentage change in 24h"}
+                {"+1%"}
               </Badge>
             </div>
           </CardFooter>

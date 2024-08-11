@@ -25,7 +25,7 @@ const SettingsPage = () => {
           <div className={cardItemClassNames}>
             <div className="text-2xl mb-1 font-semibold">{"DAO"}</div>
           </div>
-          <CardItem title={"Name"} value={" DAOName"} />
+          <CardItem title={"Name"} value={" PopuliDAO"} />
           <Separator orientation="horizontal" />
           <div className={cardItemClassNames}>
             <div className="w-40 text-zinc-700">{"Blockchain"}</div>
@@ -33,13 +33,13 @@ const SettingsPage = () => {
             <Badge className='bg-slate-200' variant="outline">{"Not Changeable"}</Badge>
           </div>
           <Separator orientation="horizontal" />
-          <CardItem title={"Summary"} value={" This DAO is made for bla-bla purposes"} />
+          <CardItem title={"Summary"} value={" This DAO is for the people, by the people"} />
         </Card>
         <Card className={cardClassNames}>
           <div className={cardItemClassNames}>
             <div className="text-2xl mb-1 font-semibold">{"Governance"}</div>
           </div>
-          <CardItem title={"Minimum Approval"} value={"x of n members"} />
+          <CardItem title={"Minimum Approval"} value={"3 of 7 members"} />
           <Separator orientation="horizontal" />
           <CardItem title="Proposal Creation" value="Multisig Members" />
         </Card>

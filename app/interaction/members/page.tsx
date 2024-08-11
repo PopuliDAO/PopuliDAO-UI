@@ -10,7 +10,7 @@ const MembersPage = () => {
 			<Card className="sm:col-span-2 rounded-xl bg-slate-50 border-none p-4 min-w-8/12 w-9/12">
 				<CardHeader className="flex flex-row items-center justify-between">
 					<CardTitle className="text-3xl">
-						{"X Members"}
+						{"7 Members"}
 					</CardTitle>
 					<Button className='rounded-xl'>{"Manage Members"}</Button>
 				</CardHeader>

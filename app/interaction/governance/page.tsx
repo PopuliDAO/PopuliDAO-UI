@@ -28,7 +28,6 @@ const GovernancePage: React.FC = () => {
   const [proposalDescription, setProposalDescription] = React.useState("");
   const [proposalTarget, setProposalTarget] = React.useState("");
   const [proposalCalldata, setProposalCalldata] = React.useState("");
-  const [proposalExpiryDate, setProposalExpiryDate] = React.useState("");
   const [showCreateProposal, setShowCreateProposal] = React.useState(false);
 
   const { createProposal, createProposalLoading, createProposalError } = useMyGovernorDao();
@@ -144,14 +143,6 @@ const GovernancePage: React.FC = () => {
                   onChange={(e) => setProposalCalldata(e.target.value)}
                 />
               </div>
-              <div>
-                <Label>Expiry</Label>
-                <Input
-                  type="text"
-                  value={proposalExpiryDate}
-                  onChange={(e) => setProposalExpiryDate(e.target.value)}
-                />
-              </div>
             </div>
             <Button
               onClick={handleCreateProposal}
@@ -179,14 +170,14 @@ const GovernancePage: React.FC = () => {
             <div className="flex flex-col gap-4">
               <Card className="rounded-b-xl">
                 <CardHeader className="flex flex-row items-center text-3xl font-semibold justify-between">
-                  Donation
+                  Staking
                   <Badge className="text-lg font-normal" variant="outline">
                     Active
                   </Badge>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-lg">
-                    Donation to the community
+                    Staking 20% of DAO funds for 6 months
                   </CardDescription>
                 </CardContent>
                 <CardFooter className="text-sm">
