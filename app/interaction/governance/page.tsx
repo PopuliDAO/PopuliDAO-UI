@@ -20,6 +20,7 @@ import { worldIdApp, worldAction } from "@/app/constants"
 
 const GovernancePage: React.FC = () => {
   const { address: connectedAddress } = useAccount()
+  const [verified, setVerified] = React.useState(false)
 
   const {
     data: hash,
@@ -35,10 +36,11 @@ const GovernancePage: React.FC = () => {
     )[0]
     console.log("result", result)
     console.log("unpackedProof", unpackedProof)
+    setVerified(true)
 
     try {
       await writeContractAsync({
-        address: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as `0x${string}`,
+        address: process.env.NEXT_PUBLIC_WORLD_VERIFY_ADDRESS as `0x${string}`,
         account: connectedAddress!,
         abi: WorldverifyAbi,
         functionName: "registerAccount",
@@ -68,7 +70,8 @@ const GovernancePage: React.FC = () => {
       <Card className="sm:col-span-2 rounded-xl p-4 min-w-7/12 w-9/12">
         <CardHeader className="flex flex-row items-center justify-between">
           <CardTitle className="text-3xl">Proposals</CardTitle>
-          <IDKitWidget
+          <div className="flex flex-row gap-2 items-center justify-center">
+            <IDKitWidget
             app_id={worldIdApp}
             action={worldAction}
             signal={connectedAddress}
@@ -76,10 +79,13 @@ const GovernancePage: React.FC = () => {
           >
             {({ open }) => (
               <Button className="rounded-xl" onClick={open}>
-                + New Proposal
+                {verified?"WorldID Verified":"Verify Identity"}
               </Button>
             )}
           </IDKitWidget>
+            <Button className="rounded-xl">Create Proposal</Button>
+          </div>
+          
         </CardHeader>
       </Card>
       <div className="grid flex-1 mt-4 items-start gap-4 p-4 min-w-7/12 w-9/12 sm:px-6 sm:py-0 md:gap-8">
