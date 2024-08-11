@@ -13,7 +13,7 @@ const InteractionHeader = () => {
                 <Link href="/" className="text-xl md:text-xl font-bold text-blue-500">
                     PopuliDAO
                 </Link>
-                <Link href="/interaction/dashboard" className={` rounded-xl hover:bg-gray-50  p-2 ${pathname === "/interaction/dashboard" ? "text-blue-600 font-bold bg-gray-50 " : "text-gray-700 font-semibold hover:text-blue-500"}`}>Dashboard</Link>
+                {/* <Link href="/interaction/dashboard" className={` rounded-xl hover:bg-gray-50  p-2 ${pathname === "/interaction/dashboard" ? "text-blue-600 font-bold bg-gray-50 " : "text-gray-700 font-semibold hover:text-blue-500"}`}>Dashboard</Link> */}
                 <Link href="/interaction/governance" className={`rounded-xl hover:bg-gray-50  p-2 ${pathname === "/interaction/governance" ? "text-blue-600 font-bold bg-gray-50 " : "text-gray-700 font-semibold hover:text-blue-500"}`}>Governance</Link>
                 <Link href="/interaction/finance" className={`rounded-xl hover:bg-gray-50 p-2 ${pathname === "/interaction/finance" ? "text-blue-600 font-bold bg-gray-50 " : "text-gray-700 font-semibold hover:text-blue-500"}`}>Finance</Link>
                 <Link href="/interaction/members" className={`rounded-xl hover:bg-gray-50 p-2 ${pathname === "/interaction/members" ? "text-blue-600 font-bold bg-gray-50 " : "text-gray-700 font-semibold hover:text-blue-500"}`}>Members</Link>
