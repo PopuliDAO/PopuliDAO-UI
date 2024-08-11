@@ -7,14 +7,14 @@ import {
   getDefaultConfig,
   RainbowKitProvider,
 } from "@rainbow-me/rainbowkit"
-import { hardhat, sepolia, baseSepolia } from "wagmi/chains"
+import { hardhat, sepolia, baseSepolia, optimismSepolia } from "wagmi/chains"
 
 const queryClient = new QueryClient()
 
 const config = getDefaultConfig({
   appName: "PopuliDAO",
   projectId: process.env.NEXT_PUBLIC_RAINBOWKIT_PROJECT_ID ?? "",
-  chains: [hardhat, sepolia, baseSepolia],
+  chains: [optimismSepolia ,sepolia, baseSepolia, hardhat],
   ssr: true,
 })
 
